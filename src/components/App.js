@@ -49,6 +49,14 @@ increment(name, value){
 decrement(name, value){
     let {cartQuantity}= this.state;
     cartQuantity[name]= value;
+    if(value<=0){
+        this.setState(prevState=>{
+            return{
+            cartQuantity:{...prevState.cartQuantity, 
+                [name]: 0
+            }}
+        })
+    }else{
         this.setState(prevState=>{
             return{
                 cartQuantity:{...prevState.cartQuantity, 
@@ -56,6 +64,8 @@ decrement(name, value){
                 }
             }
         });
+    }
+        
 };
 
 //funcón para que se muestre la página de detalle en función del nombre del artículo que se ha clicklado, he usado react router para manejar que se muetre cada modelo según el id. 
