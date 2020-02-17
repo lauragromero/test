@@ -18,14 +18,13 @@ class App extends React.Component{
           mug:0, 
           cap:0
       },
-      totalAmount:0, 
+      totalAmount:0
     };
     this.inputValue= this.inputValue.bind(this);
     this.increment= this.increment.bind(this);
     this.decrement= this.decrement.bind(this);
     this.renderRouterDetail = this.renderRouterDetail.bind(this); 
 };
-
 
 //función que maneja que se actualice el estado de la cantidad en función del valor de imput
 inputValue(value, item){
@@ -41,9 +40,11 @@ increment(name, value){
         return{
             cartQuantity:{...prevState.cartQuantity, 
                 [name]: prevState.cartQuantity[name] +1
-            }
+            },
         }
     });
+
+
 };
 //función que maneja que se actualice el estado de la cantidad en función del del botón -
 decrement(name, value){
@@ -65,7 +66,7 @@ decrement(name, value){
             }
         });
     }
-        
+       
 };
 
 //funcón para que se muestre la página de detalle en función del nombre del artículo que se ha clicklado, he usado react router para manejar que se muetre cada modelo según el id. 
@@ -77,8 +78,8 @@ renderRouterDetail(props){
                     cartQuantity={this.state.cartQuantity}
                     />
 };
+
 render(){
-    console.log(this.state)
   return (
     <main className="App">
           <Switch>
@@ -90,7 +91,8 @@ render(){
                     cartQuantity={this.state.cartQuantity}
                     inputValue={this.inputValue}
                     increment={this.increment}
-                    decrement={this.decrement}/>
+                    decrement={this.decrement}
+                    />
             </section>
             <Summary
                 cartQuantity={this.state.cartQuantity}

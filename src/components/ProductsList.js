@@ -32,8 +32,9 @@ const ProductsList =(props)=>{
         </React.Fragment>
  )
 };
+
 Item.propTypes = { 
   cartQuantity: PropTypes.object
-}
+};
 
 export default ProductsList;

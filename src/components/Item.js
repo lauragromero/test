@@ -9,7 +9,7 @@ const Item =(props)=>{
         props.inputValue(parseInt(e.target.value), e.target.name) 
     }
     const increment=(e)=>{
-      props.increment(e.target.name,parseInt(e.target.value))
+      props.increment(e.target.name,parseInt(e.target.value)) 
     }
     const decrement=(e)=>{
       props.decrement(e.target.name,parseInt(e.target.value))
@@ -41,7 +41,4 @@ const Item =(props)=>{
       </li>
     )
 }
-
-
-
 export default Item;
